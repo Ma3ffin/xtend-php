@@ -30,12 +30,12 @@ class User
         $this->name = $name;
         $this->passwort = $passwort;
         $this->rolle = $rolle;
-        $this->edit = new RezeptBearbeiten("Rezept bearbeiten");
-        $this->view = new RezeptView("Rezept sehen");
-        $this->list = new RezeptList("Rezepte sehen");
-        $this->rate = new RezeptBewerten("Rezepte bewerten");
-        $this->neu = new RezeptNeu("Rezept erstellen");
-        $this->changerole = new ChangeUserRolle("Rolle aendern");
+        $this->edit = new RezeptBearbeiten("Rezept edit");
+        $this->view = new RezeptView("Rezept view");
+        $this->list = new RezeptList("Rezepte list");
+        $this->rate = new RezeptBewerten("Rezepte rate");
+        $this->neu = new RezeptNeu("Rezept add");
+        $this->changerole = new ChangeUserRolle("Change Role");
     }
 
     /**

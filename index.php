@@ -30,16 +30,92 @@ use Community\RezeptList;
 use Community\ChangeUserRolle;
 use Community\User;
 
+$stop = true;
+while($stop){
+
+    $repeat = true;
+    while($repeat){
+        $u = 0;
+        foreach($userlist as $user){
+            $u++;
+            echo $u .". ". $user->getName(). "\n";
+        }
+        echo "\n";
+        $pickeduserID = readline("Select a User: ");
+        echo "\n";
+        if($pickeduserID <= $u && $pickeduserID > 0 && is_numeric($pickeduserID)){
+            $repeat = false;
+        }
+    }
+
+    $repeat = true;
+    while($repeat){
+        $u = 0;
+        foreach($rezeptlist as $rezept){
+            $u++;
+            echo $u .". ". $rezept->getName(). "\n";
+        }
+        echo "\n";
+        $pickedrezeptID = readline("Select a Rezept: ");
+        echo "\n";
+        if($pickedrezeptID <= $u && $pickedrezeptID > 0 && is_numeric($pickedrezeptID)){
+            $repeat = false;
+        }
+    }
+
+    $pickeduser = $userlist[$pickeduserID-1];
+
+    echo "\n".$pickeduser->getName() ." has the role " . $pickeduser->getRolle();
+    echo "\nPermissions:\n";
+    echo "Add Rezept: ".boolToString($pickeduser->getNeu()->canExecute($user)) . "\n";
+    echo "Edit Rezept: ".boolToString($pickeduser->getEdit()->canExecute($user)) . "\n";
+    echo "View Rezept: ".boolToString($pickeduser->getView()->canExecute($user)) . "\n";
+    echo "List Rezepte: ".boolToString($pickeduser->getList()->canExecute($user)) . "\n";
+    echo "Rate Rezept: ".boolToString($pickeduser->getRate()->canExecute($user)) . "\n";
+    echo "Change User Role: ".boolToString($pickeduser->getChangerole()->canExecute($user)) . "\n\n";
+
+    $pickedrezept = $rezeptlist[$pickedrezeptID-1];
 
 
-foreach($userlist as $user){
-    echo $user->getName() ." " . $user->getNeu()->execute($user) . "\n";
+    $pickeduser->getView()->setRezept($pickedrezept);
+    echo $pickeduser->getView()->execute($pickeduser) . "\n";
+
+    $pickeduser->getEdit()->setRezept($pickedrezept);
+    echo $pickeduser->getEdit()->execute($pickeduser) . "\n";
+
+
+    $pickeduser->getRate()->setRezept($pickedrezept);
+
+    $repeat = true;
+    while($repeat){
+        echo "\n";
+        $rate = readline("Insert Rating for ".$pickeduser->getRate()->getRezept()->getName().": ");
+        echo "\n";
+        if($rate <= 5 && $rate >= 0 && is_numeric($rate)){
+            $repeat = false;
+        }
+    }
+    $pickeduser->getRate()->setBewertung($rate);
+
+    echo $pickeduser->getRate()->execute($pickeduser) . "\n";
+
+
+
+
+
+
+
+
+
+    $line = readline("Stop Program?(y/n): ");
+    if($line == "y"){
+        $stop = false;
+    }
 }
 
-foreach($rezeptlist as $rezept){
-    echo $rezept->getName() ."\n";
+function boolToString($bool){
+    if($bool){
+        return "YES";
+    }
+    return "NO";
 }
-
-
-
-

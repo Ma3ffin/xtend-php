@@ -29,9 +29,9 @@ class RezeptList extends Action
     public function execute($user)
     {
         if($this->canExecute($user)){
-            return "Darf ". $this->getName();
+            return $user->getName()." viewed Rezepte\n";
         }else{
-            return "Darf nicht ". $this->getName();
+            return $user->getName()." can not view Rezepte\n";
         }
     }
 

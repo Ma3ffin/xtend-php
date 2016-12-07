@@ -29,9 +29,9 @@ class RezeptBearbeiten extends Action
     public function execute($user)
     {
         if($this->canExecute($user)){
-            return "Darf ". $this->getName();
+            return $user->getName()." changed ".$this->getRezept()->getName(). " \n";
         }else{
-            return "Darf nicht ". $this->getName();
+            return $user->getName()." can not change".$this->getRezept()->getName(). " \n";
         }
     }
 

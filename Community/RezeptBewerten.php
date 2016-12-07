@@ -47,9 +47,9 @@ class RezeptBewerten extends Action
     public function execute($user)
     {
         if($this->canExecute($user)){
-            return "Darf ". $this->getName();
+            return $user->getName()." hat ".$this->getRezept()->getName(). " mit ".$this->getBewertung() ." bewerted\n";
         }else{
-            return "Darf nicht ". $this->getName();
+            return $user->getName()." darf ".$this->getRezept()->getName(). " nicht mit ".$this->getBewertung() ." bewerten\n";
         }
     }
 

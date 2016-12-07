@@ -32,9 +32,9 @@ class RezeptNeu extends Action
     public function execute($user)
     {
         if($this->canExecute($user)){
-            return "Darf ". $this->getName();
+            return $user->getName()." added ".$this->getRezept()->getName(). " \n";
         }else{
-            return "Darf nicht ". $this->getName();
+            return $user->getName()." can not add".$this->getRezept()->getName(). " \n";
         }
     }
 

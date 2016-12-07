@@ -49,9 +49,9 @@ class ChangeUserRolle extends Action
     public function execute($user)
     {
         if($this->canExecute($user)){
-            return "Darf ". $this->getName();
+            return $user->getName()." changed Role for ".$this->getChangeUser()->getName(). " \n";
         }else{
-            return "Darf nicht ". $this->getName();
+            return $user->getName()." can not change Role for ".$this->getChangeUser()->getName(). " \n";
         }
     }
 
