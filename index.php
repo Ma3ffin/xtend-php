@@ -41,7 +41,8 @@ while($stop){
             echo $u .". ". $user->getName(). "\n";
         }
         echo "\n";
-        $pickeduserID = readline("Select a User: ");
+        echo "Select a User: ";
+        $pickeduserID = readline("");
         echo "\n";
         if($pickeduserID <= $u && $pickeduserID > 0 && is_numeric($pickeduserID)){
             $repeat = false;
@@ -56,7 +57,8 @@ while($stop){
             echo $u .". ". $rezept->getName(). "\n";
         }
         echo "\n";
-        $pickedrezeptID = readline("Select a Rezept: ");
+        echo "Select a Rezept: ";
+        $pickedrezeptID = readline("");
         echo "\n";
         if($pickedrezeptID <= $u && $pickedrezeptID > 0 && is_numeric($pickedrezeptID)){
             $repeat = false;
@@ -89,7 +91,8 @@ while($stop){
     $repeat = true;
     while($repeat){
         echo "\n";
-        $rate = readline("Insert Rating for ".$pickeduser->getRate()->getRezept()->getName().": ");
+        echo "Insert Rating for ".$pickeduser->getRate()->getRezept()->getName().": ";
+        $rate = readline("");
         echo "\n";
         if($rate <= 5 && $rate >= 0 && is_numeric($rate)){
             $repeat = false;
@@ -99,15 +102,8 @@ while($stop){
 
     echo $pickeduser->getRate()->execute($pickeduser) . "\n";
 
-
-
-
-
-
-
-
-
-    $line = readline("Stop Program?(y/n): ");
+    echo "Stop Program?(y/n): ";
+    $line = readline("");
     if($line == "y"){
         $stop = false;
     }
