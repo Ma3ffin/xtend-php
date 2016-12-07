@@ -40,4 +40,4 @@ use Community\ChangeUserRolle;
 use Community\User;
 
 
-$userlist = array(new User("Martin","1234",Rolle::admin),new User("Klaudia","test",Rolle::gast),new User("Stefan","krokodil",Rolle::editor),new User("Tanja","4587321",Rolle::mitglied));
+//$userlist = array(new User("Martin","1234",Rolle::admin),new User("Klaudia","test",Rolle::gast),new User("Stefan","krokodil",Rolle::editor),new User("Tanja","4587321",Rolle::mitglied));

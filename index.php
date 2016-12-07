@@ -18,7 +18,7 @@ require_once('Community\RezeptNeu.php');
 require_once('Community\ChangeUserRolle.php');
 require_once('Community\User.php');
 require_once('Community\Rolle.php');
-require_once('instances.php');
+require_once('..\src-gen\instances.php');
 
 use Rezept\Bild;
 use Rezept\Einheit;
