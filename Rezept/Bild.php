@@ -12,6 +12,17 @@ class Bild
     protected $beschreibung;
     protected $pfad;
 
+    /**
+     * Bild constructor.
+     * @param $beschreibung
+     * @param $pfad
+     */
+    public function __construct($beschreibung, $pfad)
+    {
+        $this->beschreibung = $beschreibung;
+        $this->pfad = $pfad;
+    }
+
 
     /**
      * @return mixed

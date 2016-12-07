@@ -31,8 +31,15 @@ use Community\ChangeUserRolle;
 use Community\User;
 
 
+
 foreach($userlist as $user){
     echo $user->getName() ." " . $user->getNeu()->execute($user) . "\n";
 }
+
+foreach($rezeptlist as $rezept){
+    echo $rezept->getName() ."\n";
+}
+
+
 
 

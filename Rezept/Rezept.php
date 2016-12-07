@@ -15,8 +15,25 @@ class Rezept
     protected $beschreibung;
     protected $zutaten;
     protected $zutatenstufen;
-    protected $schritte;
     protected $bilder;
+
+    /**
+     * Rezept constructor.
+     * @param $name
+     * @param $beschreibung
+     * @param $zutaten
+     * @param $zutatenstufen
+     * @param $schritte
+     * @param $bilder
+     */
+    public function __construct($name, $beschreibung, $zutaten, $zutatenstufen, $bilder)
+    {
+        $this->name = $name;
+        $this->beschreibung = $beschreibung;
+        $this->zutaten = $zutaten;
+        $this->zutatenstufen = $zutatenstufen;
+        $this->bilder = $bilder;
+    }
 
     /**
      * @return mixed
@@ -80,22 +97,6 @@ class Rezept
     public function setZutatenstufen($zutatenstufen)
     {
         $this->zutatenstufen = $zutatenstufen;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getSchritte()
-    {
-        return $this->schritte;
-    }
-
-    /**
-     * @param mixed $schritte
-     */
-    public function setSchritte($schritte)
-    {
-        $this->schritte = $schritte;
     }
 
     /**

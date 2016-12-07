@@ -14,6 +14,19 @@ class Zutatenstufe
     protected $zutaten;
 
     /**
+     * Zutatenstufe constructor.
+     * @param $name
+     * @param $beschreibung
+     * @param $zutaten
+     */
+    public function __construct($name, $beschreibung, $zutaten)
+    {
+        $this->name = $name;
+        $this->beschreibung = $beschreibung;
+        $this->zutaten = $zutaten;
+    }
+
+    /**
      * @return mixed
      */
     public function getName()
