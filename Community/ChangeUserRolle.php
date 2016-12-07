@@ -1,29 +1,49 @@
 <?php
-namespace Community;
 /**
  * Created by PhpStorm.
- * User: mwoller
- * Date: 06.12.2016
- * Time: 18:54
+ * User: Marcus
+ * Date: 07.12.2016
+ * Time: 11:58
  */
-class RezeptBearbeiten extends Action
+
+namespace Community;
+
+
+class ChangeUserRolle extends Action
 {
-    protected $rezept;
+    protected $changeUser;
+    protected $rolle;
 
     /**
      * @return mixed
      */
-    public function getRezept()
+    public function getChangeUser()
     {
-        return $this->rezept;
+        return $this->changeUser;
     }
 
     /**
-     * @param mixed $rezept
+     * @param mixed $changeUser
      */
-    public function setRezept($rezept)
+    public function setChangeUser($changeUser)
     {
-        $this->rezept = $rezept;
+        $this->changeUser = $changeUser;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRolle()
+    {
+        return $this->rolle;
+    }
+
+    /**
+     * @param mixed $rolle
+     */
+    public function setRolle($rolle)
+    {
+        $this->rolle = $rolle;
     }
 
     public function execute($user)
@@ -43,7 +63,7 @@ class RezeptBearbeiten extends Action
             case Rolle::gast:
                 return false;
             case Rolle::editor:
-                return true;
+                return false;
             case Rolle::mitglied:
                 return false;
             default:

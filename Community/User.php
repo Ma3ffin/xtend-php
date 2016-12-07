@@ -11,7 +11,81 @@ class User
     protected $name;
     protected $passwort;
     protected $rolle;
-    protected $actions;
+
+    protected $edit;
+    protected $view;
+    protected $list;
+    protected $rate;
+    protected $neu;
+    protected $changerole;
+
+    /**
+     * User constructor.
+     * @param $name
+     * @param $passwort
+     * @param $rolle
+     */
+    public function __construct($name, $passwort, $rolle)
+    {
+        $this->name = $name;
+        $this->passwort = $passwort;
+        $this->rolle = $rolle;
+        $this->edit = new RezeptBearbeiten("Rezept bearbeiten");
+        $this->view = new RezeptView("Rezept sehen");
+        $this->list = new RezeptList("Rezepte sehen");
+        $this->rate = new RezeptBewerten("Rezepte bewerten");
+        $this->neu = new RezeptNeu("Rezept erstellen");
+        $this->changerole = new ChangeUserRolle("Rolle aendern");
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEdit()
+    {
+        return $this->edit;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getView()
+    {
+        return $this->view;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getList()
+    {
+        return $this->list;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRate()
+    {
+        return $this->rate;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNeu()
+    {
+        return $this->neu;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getChangerole()
+    {
+        return $this->changerole;
+    }
+
 
     /**
      * @return mixed
@@ -59,22 +133,6 @@ class User
     public function setRolle($rolle)
     {
         $this->rolle = $rolle;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getActions()
-    {
-        return $this->actions;
-    }
-
-    /**
-     * @param mixed $actions
-     */
-    public function setActions($actions)
-    {
-        $this->actions = $actions;
     }
 
 }

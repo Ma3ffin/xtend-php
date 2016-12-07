@@ -1,12 +1,15 @@
 <?php
-namespace Community;
 /**
  * Created by PhpStorm.
- * User: mwoller
- * Date: 06.12.2016
- * Time: 18:54
+ * User: Marcus
+ * Date: 07.12.2016
+ * Time: 11:53
  */
-class RezeptBearbeiten extends Action
+
+namespace Community;
+
+
+class RezeptNeu extends Action
 {
     protected $rezept;
 

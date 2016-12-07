@@ -4,26 +4,26 @@ namespace Community;
  * Created by PhpStorm.
  * User: mwoller
  * Date: 06.12.2016
- * Time: 18:54
+ * Time: 18:53
  */
-class RezeptBearbeiten extends Action
+class RezeptList extends Action
 {
-    protected $rezept;
+    protected $rezepte;
 
     /**
      * @return mixed
      */
-    public function getRezept()
+    public function getRezepte()
     {
-        return $this->rezept;
+        return $this->rezepte;
     }
 
     /**
-     * @param mixed $rezept
+     * @param mixed $rezepte
      */
-    public function setRezept($rezept)
+    public function setRezepte($rezepte)
     {
-        $this->rezept = $rezept;
+        $this->rezepte = $rezepte;
     }
 
     public function execute($user)
@@ -41,11 +41,11 @@ class RezeptBearbeiten extends Action
             case Rolle::admin:
                 return true;
             case Rolle::gast:
-                return false;
+                return true;
             case Rolle::editor:
                 return true;
             case Rolle::mitglied:
-                return false;
+                return true;
             default:
                 return false;
         }

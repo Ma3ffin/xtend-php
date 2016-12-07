@@ -18,7 +18,6 @@ require_once('Community\RezeptNeu.php');
 require_once('Community\ChangeUserRolle.php');
 require_once('Community\User.php');
 require_once('Community\Rolle.php');
-require_once('instances.php');
 
 use Rezept\Bild;
 use Rezept\Einheit;
@@ -39,47 +38,9 @@ use Community\RezeptNeu;
 use Community\RezeptList;
 use Community\ChangeUserRolle;
 use Community\User;
-
 /**
  * Created by PhpStorm.
- * User: mwoller
- * Date: 06.12.2016
- * Time: 16:42
+ * User: Marcus
+ * Date: 07.12.2016
+ * Time: 12:17
  */
-
-$testbild = new Bild();
-$toastbildbeschreibung = new Servierbeschreibung();
-
-$toastbildbeschreibung->setName("toastbild");
-$toastbildbeschreibung->setText("So sollte man den Toast anrichten");
-
-$testbild->setName("Toastbild");
-$testbild->setBeschreibung("Das ist ein Toast");
-$testbild->setPfad("bild.jpg");
-$testbild->setServierbeschreibung($toastbildbeschreibung);
-
-echo $testbild->getServierbeschreibung()->getText();
-echo "\n";
-
-$gekocht = new Zutatenstufe();
-$kaese = new Zutat();
-$toast = new Zutat();
-
-$toast->setName("Toast");
-$toast->setMenge(new Menge(2,Einheit::stueck));
-
-$kaese->setName("Kaese");
-$kaese->setMenge(new Menge(3,Einheit::g));
-
-$gekocht->setName("Gekocht");
-$gekocht->setZutaten(array($toast,$kaese));
-
-foreach ($gekocht->getZutaten() as $zutat){
-    echo $zutat->getName();
-    echo "\n";
-}
-
-$user = new User("Marcus", "Test", Rolle::gast);
-
-echo $user->getNeu()->execute($user);
-

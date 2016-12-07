@@ -11,6 +11,15 @@ class Action
     protected $name;
 
     /**
+     * Action constructor.
+     * @param $name
+     */
+    public function __construct($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
      * @return mixed
      */
     public function getName()
