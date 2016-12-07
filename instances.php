@@ -38,9 +38,6 @@ use Community\RezeptNeu;
 use Community\RezeptList;
 use Community\ChangeUserRolle;
 use Community\User;
-/**
- * Created by PhpStorm.
- * User: Marcus
- * Date: 07.12.2016
- * Time: 12:17
- */
+
+
+$userlist = array(new User("Martin","1234",Rolle::admin),new User("Klaudia","test",Rolle::gast),new User("Stefan","krokodil",Rolle::editor),new User("Tanja","4587321",Rolle::mitglied));

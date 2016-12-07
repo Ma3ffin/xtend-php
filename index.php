@@ -40,12 +40,6 @@ use Community\RezeptList;
 use Community\ChangeUserRolle;
 use Community\User;
 
-/**
- * Created by PhpStorm.
- * User: mwoller
- * Date: 06.12.2016
- * Time: 16:42
- */
 
 $testbild = new Bild();
 $toastbildbeschreibung = new Servierbeschreibung();
@@ -79,7 +73,9 @@ foreach ($gekocht->getZutaten() as $zutat){
     echo "\n";
 }
 
-$user = new User("Marcus", "Test", Rolle::gast);
 
-echo $user->getNeu()->execute($user);
+foreach($userlist as $user){
+    echo $user->getName() ." " . $user->getNeu()->execute($user) . "\n";
+}
+
 
