@@ -1,11 +1,6 @@
 <?php
 require_once('Rezept\Bild.php');
-require_once('Rezept\Einheit.php');
-require_once('Rezept\Menge.php');
 require_once('Rezept\Rezept.php');
-require_once('Rezept\Schritt.php');
-require_once('Rezept\Servierbeschreibung.php');
-require_once('Rezept\Verwandterezepte.php');
 require_once('Rezept\Zutat.php');
 require_once('Rezept\Zutatenstufe.php');
 
@@ -20,12 +15,7 @@ require_once('Community\User.php');
 require_once('Community\Rolle.php');
 
 use Rezept\Bild;
-use Rezept\Einheit;
-use Rezept\Menge;
 use Rezept\Rezept;
-use Rezept\Schritt;
-use Rezept\Servierbeschreibung;
-use Rezept\Verwandterezepte;
 use Rezept\Zutat;
 use Rezept\Zutatenstufe;
 

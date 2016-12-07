@@ -9,10 +9,8 @@ namespace Rezept;
  */
 class Bild
 {
-    protected $name;
     protected $beschreibung;
     protected $pfad;
-    protected $servierbeschreibung;
 
 
     /**
@@ -46,38 +44,5 @@ class Bild
     {
         $this->pfad = $pfad;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * @param mixed $name
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getServierbeschreibung()
-    {
-        return $this->servierbeschreibung;
-    }
-
-    /**
-     * @param mixed $servierbeschreibung
-     */
-    public function setServierbeschreibung($servierbeschreibung)
-    {
-        $this->servierbeschreibung = $servierbeschreibung;
-    }
-
 
 }

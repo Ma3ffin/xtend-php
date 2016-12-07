@@ -17,7 +17,6 @@ class Rezept
     protected $zutatenstufen;
     protected $schritte;
     protected $bilder;
-    protected $verwandterezeptze;
 
     /**
      * @return mixed
@@ -114,22 +113,5 @@ class Rezept
     {
         $this->bilder = $bilder;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getVerwandterezeptze()
-    {
-        return $this->verwandterezeptze;
-    }
-
-    /**
-     * @param mixed $verwandterezeptze
-     */
-    public function setVerwandterezeptze($verwandterezeptze)
-    {
-        $this->verwandterezeptze = $verwandterezeptze;
-    }
-
 
 }

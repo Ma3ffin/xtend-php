@@ -14,6 +14,19 @@ class Zutat
     protected $menge;
 
     /**
+     * Zutat constructor.
+     * @param $name
+     * @param $description
+     * @param $menge
+     */
+    public function __construct($name, $description, $menge)
+    {
+        $this->name = $name;
+        $this->description = $description;
+        $this->menge = $menge;
+    }
+
+    /**
      * @return mixed
      */
     public function getName()
